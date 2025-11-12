@@ -22,7 +22,7 @@ export default function Main() {
       price: 100,
       discountedPrice: 80,
       rating: 4.2,
-      logo: <BattlefieldLogo className="w-auto h-14 fill-white" />,
+      logo: <BattlefieldLogo className="w-auto h-12 fill-white" />,
       genres: ["Action", "Shooter", "Multiplayer"],
     },
     {
@@ -81,7 +81,7 @@ export default function Main() {
           rounded-2xl">
           <StarRating rating={games[0].rating} />
           {games[0].logo}
-          <p className="text-lg font-semibold text-white/80">
+          <p className="mt-2 font-semibold text-white/80">
             {games[0].description}
           </p>
           <button className="button">Buy Now</button>

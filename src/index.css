@@ -10,8 +10,8 @@ body {
 }
 @layer utilities {
   .button {
-    @apply bg-purple-800 text-lg font-bold text-white px-14 py-4
-    rounded-xl w-fit cursor-pointer hover:bg-purple-900 transition-all
+    @apply bg-purple-800 text-sm font-bold text-white px-9 py-3
+    rounded-lg w-fit cursor-pointer hover:bg-purple-900 transition-all
     duration-200;
   }
 
