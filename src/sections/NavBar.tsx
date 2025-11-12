@@ -22,6 +22,7 @@ interface Social {
 interface MenuItem {
   id: string;
   icon: React.ReactNode;
+  hasBadge: boolean;
 }
 
 export default function NavBar() {
@@ -33,41 +34,43 @@ export default function NavBar() {
   const socials: Social[] = [
     { 
       name: "Instagram",
-      icon: <InstagramIcon className="w-5 h-5 fill-white/80" />
+      icon: <InstagramIcon className="w-4 h-4 fill-white/80" />
     },
     { 
       name: "Tiktok",
-      icon: <TiktokIcon className="w-5 h-5 fill-white/80" />
+      icon: <TiktokIcon className="w-4 h-4 fill-white/80" />
     },
     { 
       name: "Discord",
-      icon: <DiscordIcon className="w-5 h-5 fill-white/80" />
+      icon: <DiscordIcon className="w-4 h-4 fill-white/80" />
     },
   ];
   const menuItems: MenuItem[] = [
     { 
       id: "account", 
       icon: <UserIcon className="w-5 h-5 fill-white/80 group-hover:scale-115
-        group-hover:fill-blue-400 transition-all duration-200" /> 
+        group-hover:fill-blue-400 transition-all duration-200" />,
+      hasBadge: false,
     },
     { 
       id: "cart", 
       icon: <CartIcon className="w-5 h-5 fill-white/80 group-hover:scale-115
-        group-hover:fill-red-400 transition-all duration-200" /> 
+        group-hover:fill-red-400 transition-all duration-200" />,
+      hasBadge: true,
     },
   ];
 
   return (
-    <nav className="w-full bg-white/10 p-4">
+    <nav className="w-full bg-white/10 px-4 py-3">
       <div className="w-full max-w-[2000px] px-8 mx-auto flex justify-between items-center">
         {/* Nav Links */}
-        <div className="flex items-center gap-12">
+        <div className="flex items-center gap-8">
           {
             navLinks.map((link, index) => (
               <a 
                 key={index} 
                 href="#" 
-                className="text-white font-medium text-lg flex items-center gap-2
+                className="text-white font-semibold text-sm flex items-center gap-1
                   hover:text-purple-400 transition-all duration-200"
               >
                 {link.name}
@@ -92,7 +95,7 @@ export default function NavBar() {
               <a
                 key={index}
                 href="#"
-                className="p-4 bg-purple-500/20 rounded-full text-white
+                className="p-3 bg-purple-500/20 rounded-full text-white
                   hover:bg-white/20 transition-all duration-200"
               >
                 {social.icon}
@@ -108,9 +111,17 @@ export default function NavBar() {
               <a
                 key={index}
                 href="#"
-                className="p-4 rounded-full group"
+                className="relative rounded-full group"
               >
                 {item.icon}
+                {
+                  item.hasBadge && (
+                    <div className="absolute -top-4 -right-4 bg-red-500 rounded-full
+                      w-6 h-6 flex items-center justify-center text-sm font-bold">
+                      1
+                    </div>
+                  )
+                }
               </a>
             ))
           }

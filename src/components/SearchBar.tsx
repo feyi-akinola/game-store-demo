@@ -1,4 +1,4 @@
-import SearchIcon from "../assets/svg/search.svg?react";
+import { Search } from "lucide-react";
 
 const SearchBar = () => {
   return (
@@ -10,15 +10,15 @@ const SearchBar = () => {
       <input
         type="text"
         placeholder="Search for products"
-        className="w-full outline-none px-6 text-purple-300 font-semi text-lg"
+        className="w-full outline-none px-6 text-purple-300 font-semi text-sm"
       >
       </input>
 
       <div
-        className="absolute right-1 w-10 h-10 rounded-full bg-purple-800
+        className="absolute right-1 w-8 h-8 rounded-full bg-purple-800
           flex items-center justify-center cursor-pointer"
       >
-        <SearchIcon className="w-5 h-5 fill-white" />
+        <Search className="w-4 h-4" />
       </div>
     </div>
   );

@@ -1,5 +1,28 @@
 @import "tailwindcss";
+@plugin 'tailwind-scrollbar';
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   font-family: sans-serif;
+}
+@layer utilities {
+  .button {
+    @apply bg-purple-800 text-lg font-bold text-white px-14 py-4
+    rounded-xl w-fit cursor-pointer hover:bg-purple-900 transition-all
+    duration-200;
+  }
+
+  .game-list {
+    @apply h-160 p-4 flex flex-col gap-6 rounded-xl bg-white/10 overflow-y-auto
+    scrollbar-thin scrollbar-thumb-purple-400/0 scrollbar-track-transparent
+    hover:scrollbar-thumb-purple-400/60 transition-all duration-200;
+  }
+
+  .image-hover {
+    @apply w-full h-full bg-center bg-cover transition-transform duration-300
+      group-hover:scale-105;
+  }
 }
