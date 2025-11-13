@@ -1,5 +1,6 @@
 import NavBar from "./sections/NavBar";
 import Main from "./sections/Main";
+import TopSellers from "./sections/TopSellers";
 
 export default function App() {
   return (
@@ -7,6 +8,8 @@ export default function App() {
       <NavBar />
 
       <Main />
+
+      <TopSellers />
     </div>
   );
 };

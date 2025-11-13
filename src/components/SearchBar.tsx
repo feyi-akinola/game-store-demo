@@ -9,8 +9,8 @@ const SearchBar = () => {
     >
       <input
         type="text"
-        placeholder="Search for products"
-        className="w-full outline-none px-6 text-purple-300 font-semi text-sm"
+        placeholder="Search for your favorite games"
+        className="w-full outline-none px-6 text-purple-300/40 font-semibold text-sm"
       >
       </input>
 

@@ -2,7 +2,7 @@ import DiscountIcon from "../assets/svg/discount.svg?react";
 import BattlefieldLogo from "../assets/svg/battlefield-6-logo.svg?react";
 import StarRating from "../components/StarRating";
 
-interface Game {
+export interface Game {
   title: string;
   description: string;
   image: string;
@@ -35,13 +35,13 @@ export default function Main() {
       genres: ["Action", "Adventure", "Open World"],
     },
     {
-      title: "The Witcher 3: Wild Hunt",
-      description: "Action-packed first-person shooter",
-      image: "/images/witcher-3.jpg",
+      title: "Star Wars Jedi: Fallen Order",
+      description: "A new Star Wars story",
+      image: "/images/star-wars-jedi-fallen-order.png",
       price: 100,
       discountedPrice: 80,
-      rating: 4.5,
-      genres: ["Adventure", "Open World", "Single Player"],
+      rating: 4.2,
+      genres: ["Fantasy", "Adventure", "Single Player"],
     },
     {
       title: "The Last of Us Part II",
@@ -64,7 +64,7 @@ export default function Main() {
   ];
 
   return (
-    <section className="w-full max-w-[2000px] mx-auto p-16 flex gap-10">
+    <section className="w-full max-w-[2000px] mx-auto p-8 flex gap-10">
       { /* Featured Game */ }
       <div className="relative h-160 flex-7 rounded-2xl overflow-hidden group
         cursor-pointer">
