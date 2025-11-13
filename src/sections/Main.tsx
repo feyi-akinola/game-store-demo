@@ -1,6 +1,7 @@
 import DiscountIcon from "../assets/svg/discount.svg?react";
 import BattlefieldLogo from "../assets/svg/battlefield-6-logo.svg?react";
 import StarRating from "../components/StarRating";
+import GameXLarge from "../components/GameXLarge";
 
 export interface Game {
   title: string;
@@ -9,7 +10,7 @@ export interface Game {
   price: number;
   discountedPrice: number;
   rating: number;
-  logo?: React.ReactNode | null;
+  logo?: React.ReactNode | string |null;
   genres: string[];
 }
 
@@ -66,27 +67,7 @@ export default function Main() {
   return (
     <section className="w-full max-w-[2000px] mx-auto p-8 flex gap-10">
       { /* Featured Game */ }
-      <div className="relative h-160 flex-7 rounded-2xl overflow-hidden group
-        cursor-pointer">
-        {/* Background layer (scales on hover) */}
-        <div
-          className="absolute inset-0 image-hover"
-          style={{ backgroundImage: "url('/images/battlefield-6.webp')" }}
-        >
-        </div>
-
-        {/* Overlay and content */}
-        <div className="relative z-10 w-full h-full flex flex-col items-start
-          justify-end gap-4 bg-linear-to-t from-black/50 to-transparent p-10
-          rounded-2xl">
-          <StarRating rating={games[0].rating} />
-          {games[0].logo}
-          <p className="mt-2 font-semibold text-white/80">
-            {games[0].description}
-          </p>
-          <button className="button">Buy Now</button>
-        </div>
-      </div>
+      <GameXLarge game={games[0]} height={160} />
 
 
       { /* Discounted Games */ } 

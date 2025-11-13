@@ -3,8 +3,8 @@ import StarRating from "./StarRating";
 
 export default function GameMedium({ game, index }: { game: Game, index?: number }) {
   return (
-    <div className="relative flex-1 flex flex-col gap-2 group cursor-pointer group">
-      <div className="w-auto h-78 rounded-lg overflow-hidden">
+    <div className="relative flex-1 flex flex-col gap-2 group cursor-pointer group min-w-0">
+      <div className="w-full h-78 rounded-lg overflow-hidden">
         {/* Image */}
         <div
           className={`w-auto h-68 rounded-lg image-hover`}
@@ -13,11 +13,11 @@ export default function GameMedium({ game, index }: { game: Game, index?: number
       </div>
 
       {/* Details */}
-      <h3 className="font-bold">{game.title}</h3>
+      <h3 className="font-bold truncate w-full min-w-0">{game.title}</h3>
       <div className="w-full flex items-center justify-between">
         <div className="w-full flex items-center justify-between">
           <StarRating rating={game.rating} />
-          <p className="text-xl text-purple-400 font-bold">${game.discountedPrice}</p>
+          <p className="text-purple-400 font-bold">${game.discountedPrice}</p>
         </div>
       </div>
 

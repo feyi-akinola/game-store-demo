@@ -19,16 +19,16 @@ const StarRating: React.FC<StarRatingProps> = ({ rating, max = 5 }) => {
             : 0;
 
         return (
-          <div key={index} className="relative w-5 h-5">
+          <div key={index} className="relative w-4 h-4">
             {/* Empty star (gray outline) */}
-            <Star className="absolute text-gray-300 w-5 h-5" />
+            <Star className="absolute text-gray-300 w-4 h-4" />
 
             {/* Filled star (yellow overlay clipped by width) */}
             <div
               className="absolute top-0 left-0 overflow-hidden"
               style={{ width: `${fillPercentage}%` }}
             >
-              <Star className="text-yellow-400 w-5 h-5" fill="currentColor" />
+              <Star className="text-yellow-400 w-4 h-4" fill="currentColor" />
             </div>
           </div>
         );
