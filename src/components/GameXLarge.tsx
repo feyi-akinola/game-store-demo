@@ -23,9 +23,16 @@ export default function GameXLarge({ game, height }: GameXLargeProps) {
       {/* Overlay and content */}
       <div
         className="relative z-10 w-full h-full flex flex-col items-start
-        justify-end gap-4 bg-linear-to-t from-black/70 to-transparent p-10
+        justify-end gap-4 bg-linear-to-t from-black/50 to-transparent p-10
         rounded-2xl"
-        style={ height < 130 ? { padding: "24px" } : undefined }>
+        style={{
+          padding: height < 130 ? "24px" : undefined,
+          background:
+            height < 130
+              ? "linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%)"
+              : undefined,
+          gap: height < 130 ? "8px" : undefined,
+        }}>
         <StarRating rating={game.rating} />
         {
           game.logo

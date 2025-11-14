@@ -2,6 +2,7 @@ import DiscountIcon from "../assets/svg/discount.svg?react";
 import BattlefieldLogo from "../assets/svg/battlefield-6-logo.svg?react";
 import StarRating from "../components/StarRating";
 import GameXLarge from "../components/GameXLarge";
+import GenreTag from "../components/GenreTag";
 
 export interface Game {
   title: string;
@@ -42,7 +43,7 @@ export default function Main() {
       price: 100,
       discountedPrice: 80,
       rating: 4.2,
-      genres: ["Fantasy", "Adventure", "Single Player"],
+      genres: ["Fantasy", "Adventure"],
     },
     {
       title: "The Last of Us Part II",
@@ -51,7 +52,7 @@ export default function Main() {
       price: 100,
       discountedPrice: 80,
       rating: 4,
-      genres: ["Action", "Adventure", "Single Player"],
+      genres: ["Action", "Adventure"],
     },
     {
       title: "The Elder Scrolls V: Skyrim",
@@ -98,6 +99,17 @@ export default function Main() {
                     <p className="text-purple-400/50 line-through">${game.price}</p>
                     <p className=" text-purple-400 font-bold">${game.discountedPrice}</p>
                   </div>
+                  {
+                    game.genres.length > 0 && (
+                      <div className="flex items-center gap-2">
+                        {
+                          game.genres.map((genre, index) => (
+                            <GenreTag key={index} genre={genre} />
+                          ))
+                        }
+                      </div>
+                    )
+                  }
                 </div>
               </div>
             ))
