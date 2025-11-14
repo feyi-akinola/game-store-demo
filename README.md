@@ -1,5 +1,5 @@
 ## Try it out
-[🚀 Live Preview](https://game-store-demo-c2uvm5oav-feyisayo-akinolas-projects.vercel.app)
+[🚀 Live Preview](https://game-store-demo-omega.vercel.app/)
 
 <div align="center">
   <img src="./public/showcase/image-1.png" alt="Game Store Demo banner" />
