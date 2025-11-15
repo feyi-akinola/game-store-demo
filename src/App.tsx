@@ -3,6 +3,7 @@ import Main from "./sections/Main";
 import TopSellers from "./sections/TopSellers";
 import NewReleases from "./sections/NewReleases";
 import Newsletter from "./sections/Newsletter";
+import Footer from "./sections/Footer";
 
 export default function App() {
   return (
@@ -16,6 +17,8 @@ export default function App() {
       <NewReleases />
 
       <Newsletter />
+
+      <Footer />
     </div>
   );
 };
