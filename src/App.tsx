@@ -2,6 +2,7 @@ import NavBar from "./sections/NavBar";
 import Main from "./sections/Main";
 import TopSellers from "./sections/TopSellers";
 import NewReleases from "./sections/NewReleases";
+import Newsletter from "./sections/Newsletter";
 
 export default function App() {
   return (
@@ -13,6 +14,8 @@ export default function App() {
       <TopSellers />
 
       <NewReleases />
+
+      <Newsletter />
     </div>
   );
 };

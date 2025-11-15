@@ -6,7 +6,7 @@ export default function NewReleases() {
   const games: Game[] = [
     {
       title: "Arc Raiders",
-      description: "High tension from extraction shooter with dangers from deadly machines to other Raiders.",
+      description: "High tension extraction shooter with dangers ranging from deadly machines to other Raiders.",
       image: "/images/arc-raiders.jpg",
       price: 100,
       discountedPrice: 80,
@@ -15,7 +15,7 @@ export default function NewReleases() {
     },
     {
       title: "Anno 117: Pax Romana",
-      description: "Shape the Roman Empire in this genre-defining strategic builder game",
+      description: "Shape the Roman Empire in this genre-defining strategic builder game.",
       image: "/images/anno-117-pax-romana.jpg",
       price: 100,
       discountedPrice: 80,
