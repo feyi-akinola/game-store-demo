@@ -21,7 +21,7 @@
 
 ## Overview
 
-Game Store Demo is a front-end showcase of a modern landing page for a gaming e-commerce site. It demonstrates a clean component structure with a navbar, search, game listings, and rating UI.
+Game Store Demo is a front-end showcase of a modern landing page for a gaming e-commerce site. It demonstrates a clean component structure with a navbar, search, game listings as featured, top sellers, new releases and discounts, and rating UI.
 
 - **Framework**: React 19 + TypeScript
 - **Build Tool**: Vite 7
@@ -69,13 +69,13 @@ npm run lint
 ```txt
 .
 ├─ public/               # Static assets
-│  ├─ images/            # Marketing images (jpg/webp)
-│  └─ showcase/          # Screenshots / banners
+│  ├─ images/            # Game images (png/jpg/webp)
+│  └─ showcase/          # App Screenshots
 ├─ src/
 │  ├─ assets/            # Local SVGs
 │  │  └─ svg/
-│  ├─ components/        # Reusable UI components (SearchBar, StarRating)
-│  ├─ sections/          # Page sections (NavBar, Main)
+│  ├─ components/        # Reusable UI components (SearchBar, StarRating, Game Cards and GenreTag)
+│  ├─ sections/          # Page sections (NavBar, Main, Top Sellers, New Releases, Newsletter and Footer)
 │  ├─ App.tsx            # Root app component
 │  ├─ main.tsx           # React root entry
 │  └─ index.css          # Tailwind styles entry
