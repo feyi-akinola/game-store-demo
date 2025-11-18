@@ -2,7 +2,7 @@
 [🚀 Live Preview](https://game-store-demo-omega.vercel.app/)
 
 <div align="center">
-  <img src="./public/showcase/image-1.png" alt="Game Store Demo showcase image" /> 
+  <img src="./public/showcase/image-1-new.png" alt="Game Store Demo showcase image" /> 
   
   <h1>Game Store Demo</h1>  
   
