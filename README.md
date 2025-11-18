@@ -2,9 +2,9 @@
 [🚀 Live Preview](https://game-store-demo-omega.vercel.app/)
 
 <div align="center">
-  <img src="./public/showcase/image-1.png" alt="Game Store Demo banner" />
+  <img src="./public/showcase/image-1.png" alt="Game Store Demo showcase image" /> 
   
-  <h1>Game Store Demo</h1>
+  <h1>Game Store Demo</h1>  
   
   <p>
     React + TypeScript single-page demo for a gaming e-commerce landing experience.<br/>
