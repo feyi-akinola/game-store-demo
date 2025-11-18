@@ -14,9 +14,9 @@ const Footer = () => {
 
   return (
     <footer className="w-full bg-white/7">
-      <div className="mx-auto flex flex-col items-center justify-center gap-10 px-40 py-14
+      <div className="mx-auto flex flex-col items-center justify-center gap-10 px-8 xl:px-40 py-14
         max-w-[2000px] text-white/80">
-        <div className="w-full px-28 flex items-center justify-center gap-8">
+        <div className="w-full max-w-4xl px-12 flex flex-col xl:flex-row items-center justify-center gap-8">
           <p className="text-2xl font-bold">
             Game Store
           </p>
@@ -28,7 +28,7 @@ const Footer = () => {
         </div>
 
         {/* Footer Links */}
-        <div id="footer-sections" className="w-full flex items-center justify-evenly">
+        <div id="footer-sections" className="w-full flex flex-wrap items-center justify-center gap-x-16 gap-y-6">
           {
             footerLinks.map((link, index) => (
               <a

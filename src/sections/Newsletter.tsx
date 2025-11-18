@@ -2,12 +2,12 @@
 const Newsletter = () => {
   return (
     <section className="relative overflow-hidden w-full px-16 py-24 border-t border-b border-gray-300/20">
-      <div className="max-w-[2000px] mx-auto flex items-center justify-center gap-24">
-        <div className="flex flex-col gap-8 z-999!">
-          <h2 className="text-5xl font-bold">
+      <div className="max-w-[2000px] mx-auto flex flex-col lg:flex-row items-center justify-center gap-24">
+        <div className="flex flex-col items-center lg:items-start gap-8 z-999!">
+          <h2 className="text-center lg:text-left text-3xl lg:text-5xl font-bold">
             Subscribe to our newsletter
           </h2>
-          <p className="text-2xl">
+          <p className="text-center lg:text-left text-lg lg:text-2xl">
             Stay up to date and get informed on the latest games and the <span className="text-amber-500 font-bold">HOTTEST</span> deals.
           </p>
           <input
@@ -26,7 +26,7 @@ const Newsletter = () => {
         <img 
           src="/images/ghost.png"
           alt="Ghost" 
-          className="w-auto h-140 z-999!"
+          className="w-auto h-100 lg:h-140 z-999!"
         />
       </div>
 

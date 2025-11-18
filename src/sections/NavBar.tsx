@@ -8,6 +8,8 @@ import InstagramIcon from "../assets/svg/instagram.svg?react";
 import TiktokIcon from "../assets/svg/tiktok.svg?react";
 import DiscordIcon from "../assets/svg/discord.svg?react";
 import ArrowDownIcon from "../assets/svg/arrow-down.svg?react";
+import { useMediaQuery } from "@uidotdev/usehooks";
+import { MenuIcon } from "lucide-react";
 
 interface NavLink {
   name: string;
@@ -60,49 +62,63 @@ export default function NavBar() {
     },
   ];
 
+  const isLargeWidth = useMediaQuery("(max-width: 1024px)");
+  const isExtraLargeWidth = useMediaQuery("(max-width: 1280px)");
+
   return (
     <nav className="w-full bg-white/10 px-4 py-3">
-      <div className="w-full max-w-[2000px] px-8 mx-auto flex justify-between items-center">
+      <div className="w-full max-w-[2000px] h-8 px-8 mx-auto flex justify-between items-center">
         {/* Nav Links */}
-        <div className="flex items-center gap-8">
-          {
-            navLinks.map((link, index) => (
-              <a 
-                key={index} 
-                href="#" 
-                className="text-white font-semibold text-sm flex items-center gap-1
-                  hover:text-purple-400 transition-all duration-200"
-              >
-                {link.name}
+        {
+          isLargeWidth ? (
+            <div className="flex items-center gap-8">
+              <MenuIcon className="w-5 h-5 fill-white/80" />
+            </div>
+          )
+          : (
+            <div className="flex items-center gap-8">
+              {
+                navLinks.map((link, index) => (
+                  <a 
+                    key={index} 
+                    href="#" 
+                    className="text-white font-semibold text-sm flex items-center gap-1
+                      hover:text-purple-400 transition-all duration-200"
+                  >
+                    {link.name}
 
-                {
-                  link.hasDropdown && (
-                    <ArrowDownIcon className="w-5 h-5 fill-white/60" />
-                  )
-                }
-              </a>
-            ))
-          }
-        </div>
+                    {
+                      link.hasDropdown && (
+                        <ArrowDownIcon className="w-5 h-5 fill-white/60" />
+                      )
+                    }
+                  </a>
+                ))
+              }
+            </div>
+          )
+        }
 
         {/* Search Bar */}
-        <SearchBar />
+        { !isLargeWidth && <SearchBar /> }
 
         {/* Socials */}
-        <div className="flex items-center gap-8">
-          {
-            socials.map((social, index) => (
-              <a
-                key={index}
-                href="#"
-                className="p-3 bg-purple-500/20 rounded-full text-white
-                  hover:bg-white/20 transition-all duration-200"
-              >
-                {social.icon}
-              </a>
-            ))
-          }
-        </div>
+        { !isExtraLargeWidth && (
+          <div className="flex items-center gap-8">
+            {
+              socials.map((social, index) => (
+                <a
+                  key={index}
+                  href="#"
+                  className="p-3 bg-purple-500/20 rounded-full text-white
+                    hover:bg-white/20 transition-all duration-200"
+                >
+                  {social.icon}
+                </a>
+              ))
+            }
+          </div>
+        )}
 
         {/* Account & Cart */}
         <div className="flex items-center gap-8">
