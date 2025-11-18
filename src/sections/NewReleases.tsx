@@ -37,7 +37,8 @@ export default function NewReleases() {
       </div>
 
       { /* Game List */ }
-      <div className="w-full grid grid-cols-2 gap-12">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 grid-flow-row-dense
+        justify-items-center">
         {
           games.map((game, index) =>
             <GameXLarge key={index} game={game} height={120} />

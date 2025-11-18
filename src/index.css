@@ -24,7 +24,7 @@ body {
     @apply h-auto p-4 gap-6 rounded-xl bg-white/10 overflow-y-auto
     scrollbar-thin scrollbar-thumb-purple-400/0 scrollbar-track-transparent
     hover:scrollbar-thumb-purple-400/60 transition-all duration-200 grid
-    grid-cols-1 lg:grid-cols-2 xl:grid-cols-1;
+    grid-cols-1 md:grid-cols-2 lg:grid-cols-1;
   }
 
   .image-hover {

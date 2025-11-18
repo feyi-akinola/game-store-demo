@@ -1,8 +1,8 @@
 import DiscountIcon from "../assets/svg/discount.svg?react";
 import BattlefieldLogo from "../assets/svg/battlefield-6-logo.svg?react";
-import StarRating from "../components/StarRating";
+import GameSmall from "../components/GameSmall";
 import GameXLarge from "../components/GameXLarge";
-import GenreTag from "../components/GenreTag";
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 export interface Game {
   title: string;
@@ -65,11 +65,17 @@ export default function Main() {
     },
   ];
 
-  return (
-    <section className="w-full max-w-[2000px] mx-auto p-8 flex gap-10">
-      { /* Featured Game */ }
-      <GameXLarge game={games[0]} height={160} />
+  const isMediumWidth = useMediaQuery("(max-width: 800px)");
 
+  return (
+    <section className="w-full max-w-[2000px] mx-auto p-8 flex flex-col gap-10
+      lg:flex-row">
+      { /* Featured Game */ }
+      <GameXLarge
+        game={games[0]}
+        height={ isMediumWidth ? 200 : 160 }
+        aspect={ isMediumWidth ? 11 / 16 : 16 / 10 }
+      />
 
       { /* Discounted Games */ } 
       <div className="flex-3 flex flex-col h-160 gap-6">
@@ -84,34 +90,7 @@ export default function Main() {
         <div className="game-list">
           {
             games.slice(1).map((game, index) => (
-              <div key={index} className="flex items-center gap-4 group cursor-pointer">
-                <div className="w-24 h-34 rounded-lg overflow-hidden group">
-                  <div
-                    className="image-hover"
-                    style={{ backgroundImage: `url(${game.image})` }}>
-
-                  </div>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <h3 className="font-bold">{game.title}</h3>
-                  <StarRating rating={game.rating} />
-                  <div className="flex items-center gap-2">
-                    <p className="text-purple-400/50 line-through">${game.price}</p>
-                    <p className=" text-purple-400 font-bold">${game.discountedPrice}</p>
-                  </div>
-                  {
-                    game.genres.length > 0 && (
-                      <div className="flex items-center gap-2">
-                        {
-                          game.genres.map((genre, index) => (
-                            <GenreTag key={index} genre={genre} />
-                          ))
-                        }
-                      </div>
-                    )
-                  }
-                </div>
-              </div>
+              <GameSmall key={index} game={game} />
             ))
           }
         </div>

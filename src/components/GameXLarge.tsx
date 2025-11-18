@@ -5,14 +5,15 @@ import type { Game } from "../sections/Main";
 interface GameXLargeProps {
   game: Game;
   height: number;
+  aspect?: number;
 }
 
-export default function GameXLarge({ game, height }: GameXLargeProps) {
+export default function GameXLarge({ game, height, aspect }: GameXLargeProps) {
   return (
     <div
-      className="relative flex-7 rounded-2xl overflow-hidden group
+      className="w-full relative flex-7 rounded-2xl overflow-hidden group
       cursor-pointer"
-      style={{ height: `${height * 4}px` }}>
+      style={{ height: `${height * 4}px`, aspectRatio: aspect ? `${aspect}` : undefined }}>
       {/* Background layer (scales on hover) */}
       <div
         className="absolute inset-0 image-hover"
@@ -38,7 +39,7 @@ export default function GameXLarge({ game, height }: GameXLargeProps) {
           game.logo
             ? game.logo
             : <>
-                <p className="text-3xl font-bold text-white">
+                <p className="text-2xl xl:text-3xl font-bold text-white">
                   {game.title}
                 </p>
                 <p className="text-white/80 text-sm">
