@@ -4,10 +4,10 @@ import StarRating from "./StarRating";
 export default function GameMedium({ game, index }: { game: Game, index?: number }) {
   return (
     <div className="relative flex-1 flex flex-col gap-2 group cursor-pointer group min-w-0">
-      <div className="w-full h-78 rounded-lg overflow-hidden">
+      <div className="aspect-9/14 rounded-lg overflow-hidden">
         {/* Image */}
         <div
-          className={`w-auto h-68 rounded-lg image-hover`}
+          className={`w-full rounded-lg image-hover`}
           style={{ backgroundImage: `url(${game.image})` }}>
         </div>
       </div>

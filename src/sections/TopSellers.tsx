@@ -73,7 +73,8 @@ export default function TopSellers() {
       </div>
 
       { /* Game List */ }
-      <div className="w-full flex justify-start gap-12">
+      <div className="w-full grid grid-cols-2 md:grid-cols-3
+        lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-6 justify-start gap-12">
         {
           games.map((game, index) =>
             <GameMedium key={index} game={game} index={index} />
